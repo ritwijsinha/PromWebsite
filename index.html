@@ -1,0 +1,708 @@
+<html>
+<head>
+	<style type="text/css">
+	html,
+	body {
+	    margin: 0;
+	    overflow: hidden;
+	    height: 100%;
+	}
+
+	/* Scale canvas with resize attribute to full size */
+	canvas[resize] {
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top:0;
+	    left: 0;
+	    z-index: -1;
+	}
+	.section
+	{
+		position: relative !important;
+		z-index: 0 !important;
+	}
+
+/*	#background {
+		background-color: #000;*/
+	}
+
+</style>
+	<link href="default.css" rel="stylesheet">
+    <link href="animate.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/091101401a.js"></script>
+	<meta property="og:title" content="Prometheus by IECSE" />
+	<meta property="og:description" content="Prometheus Episode VI: Reimagining Reality" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://iecse.xyz/prometheus" />
+	<meta property="og:image" content="https://iecse.xyz/prometheus/logo.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Prometheus Episode VI | Reimagining Reality | By IECSE - MIT's Official CS Club
+	</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="PromLogo.png">
+	<style>
+
+
+
+		@font-face {
+			font-family: moon;
+			src: url('Moon Light.otf');
+		}
+
+		@font-face {
+			font-family: roboto;
+			src: url('Roboto-Light.ttf');
+		}
+		html, body {
+			width: 100%;
+			padding: 0;
+			border: 0;
+			margin: 0;
+			background: url('bg.png') #EEEEEE;
+			background-size: 300px 300px;
+			text-align: center;
+		}
+
+		.googleForm {
+			width: 200px;
+			background: #4F100C;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+			margin: 0 auto;
+			font-family: codeLight;
+			color: #DDD;
+			padding: 15px;
+			box-sizing: border-box;
+			text-align: center;
+			font-size: 25px;
+			margin-top: 60px;
+			cursor: pointer;
+			transition: all ease .5s;
+		}
+
+		.googleForm:hover {
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+			color: #FFF;
+		}
+
+		.bounce {
+			-moz-animation: bounce 2s infinite;
+			-webkit-animation: bounce 2s infinite;
+			animation: bounce 2s infinite;
+		}
+
+		@keyframes bounce {
+			0%, 20%, 50%, 80%, 100% {
+				-moz-transform: translateY(0);
+				-ms-transform: translateY(0);
+				-webkit-transform: translateY(0);
+				transform: translateY(0);
+			}
+			40% {
+				-moz-transform: translateY(-30px);
+				-ms-transform: translateY(-30px);
+				-webkit-transform: translateY(-30px);
+				transform: translateY(-30px);
+			}
+			60% {
+				-moz-transform: translateY(-15px);
+				-ms-transform: translateY(-15px);
+				-webkit-transform: translateY(-15px);
+				transform: translateY(-15px);
+			}
+		}
+
+		.container {
+			width: 80%;
+			min-width: 1000px;
+			background: #FFFFFF;
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, .2);
+			box-sizing: border-box;
+			margin: 0 auto;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			font-family: josefinSans;
+		}
+
+		.iecse-logo {
+			width: 150px;
+			height: 150px;
+			margin-bottom: 20px;
+		}
+		.intro {
+			padding: 70px 100px 70px 100px;
+			font-size: 23px;
+
+			color: #555;
+			font-family: roboto;
+		}
+		.logo{
+			width: 350px; height: 350px; margin: 0 auto;
+		}
+
+		a, a:hover, a:visited {
+			text-decoration: none;
+		}
+
+		
+		.headerTitle {
+			font-family: moon;
+			font-size: 75px;
+			letter-spacing: 0px;
+			margin-top: -40px;
+			color: #222;
+		}
+		
+		.headerSubTitle {
+			color: #971C1C;
+			letter-spacing: 2px;
+			font-family: moon;
+			margin-top: 10px;
+			font-size: 30px;
+		}
+		
+		.headerSubSubTitle {
+			color: #777;
+			letter-spacing: 2px;
+			font-family: moon;
+			margin-top: 10px;
+			font-size: 25px;
+		}
+		
+		.headerLeft {
+			position: absolute;
+			left: 200px;
+			width: 150px;
+			top: 300px;
+			opacity: .25;
+		}
+		.headerRight {
+			position: absolute;
+			
+			opacity: .25;
+			top: 300px;
+			width: 150px;
+			right: 200px;
+		}
+		
+		.introTitle {
+			font-family: moon;
+			color: #EEE;
+			font-size: 60px;
+			margin-bottom: 30px;
+		}
+		.introText {
+			color: #EEE;
+			font-family: roboto;
+			width: 80%;
+			margin: 0 auto; 
+			
+		}
+		.highlight{
+			top: 10px;
+			font-size: 25px;
+			text-align: center;
+		}
+		@media only screen and (max-width: 436px){
+			.container {
+				width: 80%;
+				min-width: 1000px;
+				background: #FFFFFF;
+				box-shadow: 0px 0px 20px rgba(0, 0, 0, .2);
+				box-sizing: border-box;
+				margin: 0 auto;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				font-family: josefinSans;
+			}
+			.logo{
+				width: 300px; height: 300px; margin: 0 auto;
+			}
+
+			.intro {
+				padding: 20px 20px 20px 20px;
+				font-size: 19px;
+				color: #555;
+				font-family: roboto;
+				margin: auto;
+				left: 0;
+				right: 0;
+			}
+			.headerTitle {
+				font-family: moon;
+				font-size: 40px;
+				letter-spacing: 0px;
+				margin-top: -10px;
+				color: #222;
+				left: 0;
+				right: 0;
+			}
+			.headerSubTitle {
+				color: #971C1C;
+				letter-spacing: 0px;
+				font-family: moon;
+				margin-top: 10px;
+				font-size: 37px;
+			}
+			.headerLeft {
+				position: absolute;
+				left: 100px;
+				width: 50px;
+				top: 230px;
+				opacity: 0.25;
+			 -ms-transform: rotate(340deg); /* IE 9 */
+   			 -webkit-transform: rotate(340deg); /* Chrome, Safari, Opera */
+    			transform: rotate(340deg);
+
+			}``
+			.headerRight {
+				position: absolute;
+				opacity: 0.25;
+				top: 230px;
+				width: 50px;
+				right: 100px;
+			  -ms-transform: rotate(20deg); /* IE 9 */
+           -webkit-transform: rotate(20deg); /* Chrome, Safari, Opera */
+    	transform: rotate(20deg);
+			}
+			.introTitle {
+				font-family: moon;
+				color: #EEE;
+				font-size: 40px;
+				margin-bottom: 30px;
+			}
+			.introText {
+				color: #EEE;
+				font-family: roboto;
+				width: 80%;
+				font-size: 20px;
+				margin: 0 auto; 
+				text-align: left;
+
+			}
+
+		}	
+		
+		
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="jquery.slimscroll.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+
+	<script type="text/javascript" src="jquery.adaptive-backgrounds.js"></script>
+	<script type="text/javascript" src="jquery.fullPage.min.js"></script>
+
+	<script type="text/javascript">
+		var defaults      = {
+			selector:             '[data-adaptive-background="1"]',
+			parent:               null,
+			exclude:              [ 'rgb(0,0,0)', 'rgba(255,255,255)' ],
+			normalizeTextColor:   true,
+			normalizedTextColors:  {
+				light:      "#fff",
+				dark:       "#000"
+			},
+			lumaClasses:  {
+				light:      "ab-light",
+				dark:       "ab-dark"
+			}
+		};
+
+
+		$(document).ready(function(){
+			$.adaptiveBackground.run(defaults);
+		});
+		
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['Landing', 'Introduction', 'Events', 'Sponsors','Contact', 'End'],
+				// sectionsColor: ['rgba(0,0,0,1)', '#5C0009', '#9B96A3','#940315', '#393845','#333'],
+				// rgba(135,31,45,1) EAE6C3
+				sectionsColor: ['rgba(0,0,0,1)', '#6B0C22', '#rgba(112,201,192,0.5)','#6B0C22', '#011C26','#588C8C'],
+				navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: ['Landing','Introduction','Events','Sponsors','Contact','End'],
+				normalScrollElements: ['#section2'],
+				autoScrolling: false,
+				fitToSection: false,
+				
+			});
+		});
+		
+	</script>
+
+
+</head>
+
+<body>
+<!-- <canvas id="background" resize="true"></canvas> -->
+<script type="text/javascript" src="paper.js"></script>
+<script type="text/paperscript" canvas="background">
+	var count = 150;
+
+	var path = new Path.Circle({
+		center: [0, 0],
+		radius: 10,
+		fillColor: 'white',
+<!-- 		strokeColor: 'black', -->
+opacity: 0.5
+	});
+
+	var symbol = new Symbol(path);
+
+	// Place the instances of the symbol:
+	for (var i = 0; i < count; i++) {
+		var center = Point.random() * view.size;
+		var placedSymbol = symbol.place(center);
+		placedSymbol.scale(i / count);
+	}
+
+	function onFrame(event) {
+		for (var i = 0; i < count; i++) {
+			var item = project.activeLayer.children[i];
+			item.position.x += item.bounds.width / 20;
+			if (item.bounds.left > view.size.width) {
+				item.position.x = -item.bounds.width;
+			}
+		}
+	}
+
+	function onResize(event) {
+	}
+</script>
+
+
+
+	<div id="fullpage">
+		<div class="section " id="section0" style="background: url('paperz.png');">
+			<div class="intro">
+				<img src='PromLogo.png' class="logo" >
+				<div class='headerTitle' style="color: white">Prometheus<BR><font style="font-size:50px">Episode VI</font></div>
+				<div class='headerSubTitle'>Reimagining Reality</div>
+
+				<div class='dates' style='color: rgb(200,200,200)'>
+					March 24th-26th
+				</div>
+				<div class='headerSubSubTitle'>By IECSE</div>
+<!--   -->
+				<i class='fa fa-angle-down bounce ' style=' margin-top: 25px; font-size: 75px; color: rgba(255,255,255, 1);'></i>
+			</div>
+		</div>
+		<div class="section" id="section1" style="background: url('clouds.png') no-repeat; background-size: 100% auto; "><BR><BR><BR>
+			<div class="intro">
+				<img src='bot.png' style='width: 270px; opacity: 1; margin: 0 auto;'>
+				<div class='introTitle'>PROMETHEUS<BR><font style="font-size:45px">EPISODE VI</font></div>
+				<div class='introText'>
+					Prometheus is the annual Technical Fest of IECSE. 
+					This is the sixth time the fest will be organized by the club. 
+					The technical extravaganza will begin on the 24th of March and will continue till the 26th.
+					We have planned eight events for Prometheus Episode VI which includes both technical and non technical competitions. 
+					In the previous years we have seen participation in mass numbers in all events and we expect an even greater turn up this time.
+					<br><br>
+					<div class="highlight">It's 'Reimagining Reality' this time. So as we say,<br>
+					Let the games begin!</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var i = 0
+			function something(){
+				i++;
+				if(i%2==0)
+					alert("harambe was an inside job");
+			}
+		</script>
+		<div class="section" id="section2">
+			<div class="intro">
+				<div class='introTitle' style='color: #333;'>EVENTS</div>
+				<div class='event-container'>
+					<div class='event'>
+						<div class='spacer'>
+						</div>
+						<img src='images/hawkeye.png' data-adaptive-background="1" class='eventImage'>
+						<div class='eventTitle'>
+							HawkEye
+						</div>
+						<div class='eventDesc'>
+							HawkEye is an online scavenging hunt where you match wits against hundreds of participants solving cryptic puzzles and collecting small but vital clues to advance through the levels.
+							<a href="#Landing">HawkEye</a>
+						</div>
+					</div>
+					<div class='event'>
+					<div class='spacer'></div>
+						<img src='images/OnlineCoding.png' data-adaptive-background="1" class='eventImage'>
+						<div class='eventTitle'>
+							Online Coding
+						</div>
+						<div class='eventDesc' >
+							Enjoyed participating in competitions on Hackerrank and CodeChef?
+							Immerse yourself in mind-boggling coding questions on an online judge for 3 days straight.
+						</div>
+					</div>
+
+					<div class='event'>
+					<div class='spacer'></div>
+						<img src='images/artem.png' data-adaptive-background="1" class='eventImage'>
+						<div class='eventTitle'>
+							Artem
+						</div>
+						<div class='eventDesc' >
+							Love designing and drawing? Test your graphic design skills in this 2-round event.
+						</div>
+					</div>
+
+					<div class='event' onclick="something()">
+					<div class='spacer'></div>
+						<img src='images/bamboozled.png' data-adaptive-background="1" class='eventImage'>
+						<div class='eventTitle'>
+							Bamboozled
+						</div>
+						<div class='eventDesc' >
+							MIT's first ever game show! Again. This time, bigger, better, crazier. Come join the madness and be part of an event you'll never forget.</div>
+						</div>
+					
+
+					<div class='event'>
+						<div class='spacer'></div>
+							<img src='images/mvm.png' data-adaptive-background="1" class='eventImage'>
+							<div class='eventTitle'>
+								Man vs Machine
+							</div>
+							<div class='eventDesc' >
+								Machines have overpowered humans and men must use their coding skills to break away from the shackles of the machines and save mankind.</div>
+							</div>
+					
+					<div class='event'>
+					<div class='spacer'>
+					</div>
+						<img src='images/ff.png' data-adaptive-background="1" class='eventImage'>
+						<div class='eventTitle'>
+							Final Frontier
+						</div>
+						<div class='eventDesc' >
+							An event where competitive coding meets space exploration. Explore different civilizations and planets and conquer them using your coding skills.
+						</div>
+					</div>
+						
+
+							<div class='event'>
+							<div class='spacer'></div>
+								<img src='images/pp.png' data-adaptive-background="1" class='eventImage'>
+								<div class='eventTitle'>
+									Paper Presentation
+								</div>
+								<div class='eventDesc' >
+									The paper presentation is an opportunity to every participant to showcase an idea that can change it's current perception.
+									There is a chance for every idea to be showcased and presented to the world.</div>
+								</div>
+
+								<div class='event'>
+								<div class='spacer'></div>
+									<img src='images/enigma.png' data-adaptive-background="1" class='eventImage'>
+									<div class='eventTitle'>
+										Enigma
+									</div>
+									<div class='eventDesc' >
+										First ever platform independent Dev event. Think you can build a functional application? Come, prove your skills.</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<style>
+
+							.eventImage {
+								width: 200px; 
+								height: 200px;
+								margin: 0 auto;
+							}
+
+							.eventTitle {
+								font-size: 30px;
+								margin-top: 5px;
+								font-weight: bold;
+								text-transform: uppercase;
+							}
+							.eventDesc {
+								font-size: 18px;
+								width: 90%;
+								margin: 0 auto;
+								opacity: 0;
+								transition: 0.25s linear;
+							}
+							.event-container {
+								width: 100%;
+								margin: 0 auto;
+								display: inline-block;
+								margin-top: 30px;
+								text-align: center;
+							}
+
+							.event {
+								padding: 25px;
+								box-sizing: border-box;
+								display: inline-block;
+								vertical-align: middle;
+								width: 500px;
+								background: #DDD;
+								height: 400px;
+								margin: 15px;
+								transition: all ease .5s;
+								cursor: pointer;
+							}
+
+							.event:hover {
+								box-shadow: 0px 0px 30px rgba(0,0,0,0.4);
+								/*transition: 0.5s linear;*/
+							}
+							.event:hover > .eventDesc {
+    							opacity: 1;
+    							visibility: visible;
+    							transition: 0.5s linear;
+							}
+
+							.spacer{
+								height: 60px;
+								transition: 0.25s linear;
+							}
+							.event:hover > .spacer{
+								height: 0px;
+								transition: 0.25s linear;
+							}
+
+							.dates {
+								font-size: 25px;
+								color: #EEE;
+								font-family: moon;
+								text-transform: uppercase;
+								margin-top: 10px;
+							}
+
+							.register {
+								text-transform: uppercase;
+								color: #5A9EAD;
+
+								font-size: 30px;
+								margin-top: 10px;
+							}
+
+							.contact {
+								margin-top: 10px;
+								font-size: 22px;
+								text-transform: uppercase;
+								color: #EEE;
+							}
+
+							.social-icons {
+								font-size: 30px !important;
+								color: #DDD !important;
+								margin-left: 5px;
+								margin-right: 5px;
+							}	
+
+							.poster {
+								width: 375px; 
+								margin: 15px;
+								display: inline-block;
+								vertical-align: middle;
+								transition: all ease .2s;
+								cursor: pointer;
+							}
+							.poster-holder
+							{
+								box-sizing: border-box;
+								max-height: 400px;
+							}
+
+							/*.poster:hover {*/
+								/*box-shadow: 0px 0px 30px rgba(0,0,0,0.4);*/
+								/*width: 400px;*/
+								/*margin: 30px;*/
+								/*transition: 0.25s linear;*/
+							/*}*/
+							@media only screen and (max-width: 436px){
+								.event {
+									padding: 25px;
+									box-sizing: border-box;
+									display: inline-block;
+									vertical-align: middle;
+									width: 90%;
+									background: #DDD;
+									height: 550px;
+									margin: 15px;
+									transition: all ease .2s;
+									cursor: pointer;
+
+								}
+								.poster {
+								width: 80%; 
+								margin: 15px;
+								display: inline-block;
+								vertical-align: middle;
+								transition: all ease .2s;
+								cursor: pointer;
+							}
+
+							}
+
+						</style>
+						<div class="section" id="section21">
+							<div class='introTitle' style='color: #fff;'>SPONSORS</div>
+							<div class="poster-holder">
+							<img src='tss.PNG' class='poster'>
+							<img src='DO.png' class='poster'>
+							<img src='webloom-2.png' class='poster'>
+							</div>
+						</div>
+						<div class="section" id="section2">
+
+							<div class="intro">
+								<img src='logo-filter.png' style='width: 300px; margin: 0 auto; margin-bottom: 30px;'>
+								<div class='headerTitle' style='font-size: 50px; letter-spacing: 0px; '><font style='color: #A9A09A;'>Prometheus</font><br> <font style='font-size:40px;color:#EEE'>Episode VI</font></div>
+								<div class='headerSubTitle'  style='font-size: 25px;  letter-spacing: 0px; color: #5A9EAD;'>Reimagining Reality</div>
+								<div class='dates'>
+									March 24th-26th
+								</div><br><br>
+								<div class='register'>
+									<b>Registration &amp; Infodesk at KC</b>
+								</div>
+
+								<!-- <br> -->
+								<div class='contact'>
+									<span style='color: #5A9EAD'>ADITYA: </span> +91 93425 79059 
+								</div>
+								<div class='contact'>
+									<span style='color: #5A9EAD'>ILEESHA: </span> +91 97416 53755
+								</div>
+							</div>
+
+						</div>
+						<div class="section" id="section3">
+							<div class="intro">
+								<img src="iecse-logo.png" class="iecse-logo">
+								<div style="width: 100%; color: white;">
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WITH &nbsp;<i class="fa fa-heart"></i>&nbsp; FROM <b>IECSE <span style="color:transparent">WEB</span></b><br><br>
+
+									<a target="_blank" href="https://www.facebook.com/iecsemanipal/"><i class="fa social-icons fa-facebook-square"></i></a>
+									<a target="_blank" href="https://twitter.com/iecsemanipal"><i class="fa social-icons  fa-twitter-square"></i></a>
+									<a target="_blank" href="https://www.linkedin.com/company/ie-cse-manipal"><i class="fa social-icons fa-linkedin-square" aria-hidden="true"></i></a>
+									<!-- <i class="fa  social-icons fa-youtube-square"></i> -->
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</body>
+				<script type="text/javascript">
+					$(".section").prepend('<canvas id="background" resize="true"></canvas>');
+				</script>
+				</html>
